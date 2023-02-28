@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\notesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//notes
+
+Route::get('contacts', [notesController::class,'getNotes']);
+Route::post('addContact', [notesController::class,'addNote']);
+Route::get('deleteContact/{id}', [notesController::class,'deleteNote']);
+Route::put('updateContact/{id}',[notesController::class,'updateNote']);
