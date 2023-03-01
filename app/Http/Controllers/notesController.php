@@ -44,6 +44,13 @@ class notesController extends Controller
         ],200);
     }
 
+    public function getSpecificNote($id){
+        $note = notesModel::find($id);
+        return response([
+            'note'=> $note
+        ]);
+    }
+
     public function deleteNote($id){
         $notes = notesModel::find($id);
         $res = $notes->delete();
