@@ -13,4 +13,5 @@ class notesModel extends Model
     protected $fillable = [
         'id','firstName','lastName','email','phoneNumber'
     ];
+    
 }
