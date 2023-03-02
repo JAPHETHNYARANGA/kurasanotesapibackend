@@ -47,8 +47,10 @@ class notesController extends Controller
     public function getSpecificNote($id){
         $note = notesModel::find($id);
         return response([
+            'success' =>true,
+            'message'=>'Data Fetch success',
             'note'=> $note
-        ]);
+        ],200);
     }
 
     public function deleteNote($id){
